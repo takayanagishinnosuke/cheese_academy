@@ -5,7 +5,7 @@ const Body = document.getElementById('body');
 const Title = document.getElementById('maintitle');
 const navul = document.getElementById('navul');
 const scrollDown = document.getElementById('scroll-down')
-let fadeinTarget = document.querySelectorAll('.fade-in');
+let fadeinTarget = document.querySelectorAll('.fade-in');//.fade-inすべて取得
 
 
   yesans.addEventListener('click',function(){
@@ -32,9 +32,15 @@ let fadeinTarget = document.querySelectorAll('.fade-in');
       const scroll = document.documentElement.scrollTop;
       const offset = rect + scroll;
       const windowHeight = window.innerHeight;//現在のブラウザの高さ
-      if(scroll > offset - windowHeight + 150){//ここ調整部分だな
+      if(scroll > offset - windowHeight + 150){//ここ調整部分
         fadeinTarget[i].classList.add('scroll-in');
       };
     };
   })
+
+  //リロード時にスクロールTOPに戻す処理
+$(function() {
+  $('html,body').animate({ scrollTop: 0 }, '1');
+});
+
 
