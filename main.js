@@ -6,11 +6,19 @@ const Title = document.getElementById('maintitle');
 const navul = document.getElementById('navul');
 const scrollDown = document.getElementById('scroll-down')
 let fadeinTarget = document.querySelectorAll('.fade-in');//.fade-inすべて取得
+const Spmenu = document.getElementsByClassName('spmenu');
 
 
+
+//YesNOの処理
   yesans.addEventListener('click',function(){
     Body.classList.add("body");
     navul.classList.add("navul");
+    if(Spmenu){
+      for (let i =0; i <Spmenu.length; i++){
+        Spmenu[i].style.display = "";
+      }
+    }
     Title.innerHTML = '先に進んでいいですよ!'
     scrollDown.classList.add('scrolldown');
   })
@@ -19,6 +27,11 @@ let fadeinTarget = document.querySelectorAll('.fade-in');//.fade-inすべて取�
     Title.innerHTML = '帰ってください!'
     Body.classList.remove("body");
     navul.classList.remove("navul");
+    if(Spmenu){
+      for (let i =0; i <Spmenu.length; i++){
+        Spmenu[i].style.display = "none";
+      }
+    }
     scrollDown.classList.remove('scrolldown');
   })
 
@@ -43,4 +56,34 @@ $(function() {
   $('html,body').animate({ scrollTop: 0 }, '1');
 });
 
+//スマホ版ハンバーガーメニューの処理
+$('.spmenu').on('click',function(){
+  $('.overlay').css('opacity' ,'1');
+  $('.overlay').css('z-index' ,'10');
+  $('#open').css('opacity' ,'0');
+})
+//閉じる
+$('#close').on('click',function(){
+  $('.overlay').css('opacity','0');
+  $('.overlay').css('z-index' ,'0');
+  $('#open').css('opacity' ,'1');
+})
+
+// let windowWidth = window.innerWidth;
+// let windowSm = 599;
+// console.log(windowWidth)
+// if (windowWidth >= windowSm){
+//   if(Spmenu){
+//     for (let i =0; i <Spmenu.length; i++){
+//       Spmenu[i].style.display = 'none';
+//     }
+//   }else{
+//     if (windowWidth >= windowSm){
+//       if(Spmenu){
+//         for (let i =0; i <Spmenu.length; i++){
+//           Spmenu[i].style.display = '';
+//         }}
+//       }
+//     }
+//   }
 

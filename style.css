@@ -28,10 +28,14 @@ header{
   z-index: 400;
 }
 
+header img{
+  height: 50px;
+}
+
 header ul{ 
   font-size:1vw;
   list-style: none;
-  display: none;
+  /* display: none; */
   opacity: 0;
   align-items: center;
 }
@@ -43,6 +47,7 @@ header ul{
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
+
 
 @keyframes syutugen{
   0%{
@@ -66,6 +71,13 @@ header li:hover{
   text-shadow: 2px 2px 0.5px #666;
 }
 
+.spmenu{
+  display: none;
+}
+.overlay{
+  opacity: 0;
+}
+
 
 
 /* メインビジュアル */
@@ -83,7 +95,6 @@ header li:hover{
   top: 40%;
   color: #fff;
   font-size: 5vw;
-  /* z-index: 250; */
 }
 
 .maintitle{
@@ -107,7 +118,7 @@ header li:hover{
   top: 30%;
   color: #fff;
   font-size: 3vw;
-  /* z-index: 200; */
+  z-index: 11;
 }
 
 #yesorno{
@@ -619,7 +630,7 @@ footer p{
   }
 
   header img{
-    height: 50px;
+    height: 40px;
   }
 
   #yesorno{
@@ -752,6 +763,52 @@ footer p{
   header{
     height: 11%;
   }
+  .nav{
+    display: none;
+  }
+  header ul{
+    opacity: 1;
+  }
+
+  .spmenu{
+    position: absolute;
+    top: 40%;
+    right: 2%;
+    cursor: pointer;
+    z-index: 9;
+    display:inline-block;
+  }
+
+  .overlay{
+    opacity: 0;
+    position: fixed;
+    top:0;
+    right: 0;
+    width: 100%;
+    height: 40%;
+    background: rgba(252, 255, 255, 0.95);
+  }
+
+  .overlay #overlayul{
+   position: absolute;
+   top: 30%;
+   right: 10%;
+   line-height: 40px;
+   font-size: 15px;
+   margin: 0 auto;
+  }
+  .overlay a{
+    opacity: 1;
+    color: #ffd61a;
+  }
+
+  #close{
+    position: absolute;
+    top: 10%;
+    right: 2%;
+  }
+
+
 
   .container img{
     width: 130px;
@@ -880,3 +937,5 @@ footer p{
     height: 70px;
   }
 }
+
+
